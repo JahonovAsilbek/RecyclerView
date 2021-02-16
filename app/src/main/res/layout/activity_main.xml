@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/search_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/radius"
+        android:clickable="false"
+        android:elevation="12dp"
+        android:gravity="start|center"
+        android:paddingLeft="70dp"
+        android:text="Search for games "
+        android:textAllCaps="false"
+        android:textColor="#9BA0A4"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@android:color/transparent"
+        android:elevation="13dp"
+        android:padding="20dp"
+        android:src="@drawable/ic_menu1"
+        app:layout_constraintBottom_toBottomOf="@id/search_btn"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintLeft_toLeftOf="@id/search_btn"
+        app:layout_constraintRight_toRightOf="@id/search_btn"
+        app:layout_constraintTop_toTopOf="@id/search_btn" />
+
+    <ImageButton
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@android:color/transparent"
+        android:elevation="13dp"
+        android:padding="20dp"
+        android:src="@drawable/ic_microphone"
+        app:layout_constraintBottom_toBottomOf="@id/search_btn"
+        app:layout_constraintHorizontal_bias="0.82"
+        app:layout_constraintLeft_toLeftOf="@id/search_btn"
+        app:layout_constraintRight_toRightOf="@id/search_btn"
+        app:layout_constraintTop_toTopOf="@id/search_btn" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:elevation="13dp"
+        android:src="@drawable/nemo"
+        app:layout_constraintBottom_toBottomOf="@id/search_btn"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintLeft_toLeftOf="@id/search_btn"
+        app:layout_constraintRight_toRightOf="@id/search_btn"
+        app:layout_constraintTop_toTopOf="@id/search_btn" />
+
+
+    <TextView
+        android:id="@+id/recommendation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="For you"
+        android:textColor="#159A73"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias=".12"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.11" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Top charts"
+        android:textColor="#2B2B2B"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.11" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Premium"
+        android:textColor="#2B2B2B"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.11" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#9BA0A4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#159A73"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/view"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintLeft_toLeftOf="@id/recommendation"
+        app:layout_constraintRight_toRightOf="@id/recommendation"
+        app:layout_constraintVertical_bias="0.14" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="5dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/vidget_bar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        tools:ignore="NotSibling"
+        tools:listitem="@layout/item_general" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toTopOf="@id/vidget_bar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vidget_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <ImageButton
+            android:id="@+id/joystick"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="5dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_joystick"
+            app:layout_constraintBottom_toBottomOf="@id/vidget_bar"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintLeft_toLeftOf="@id/vidget_bar"
+            app:layout_constraintRight_toRightOf="@id/vidget_bar"
+            app:layout_constraintTop_toTopOf="@id/vidget_bar"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Games"
+            android:textColor="#159A73"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/vidget_bar"
+            app:layout_constraintLeft_toLeftOf="@id/joystick"
+            app:layout_constraintRight_toRightOf="@id/joystick"
+            app:layout_constraintTop_toTopOf="@id/vidget_bar"
+            app:layout_constraintVertical_bias="0.85" />
+
+        <ImageButton
+            android:id="@+id/app"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_app"
+            app:layout_constraintBottom_toBottomOf="@id/vidget_bar"
+            app:layout_constraintHorizontal_bias="0.37"
+            app:layout_constraintLeft_toLeftOf="@id/vidget_bar"
+            app:layout_constraintRight_toRightOf="@id/vidget_bar"
+            app:layout_constraintTop_toTopOf="@id/vidget_bar"
+            app:layout_constraintVertical_bias="0.22" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apps"
+            android:textColor="#9BA0A4"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/vidget_bar"
+            app:layout_constraintLeft_toLeftOf="@id/app"
+            app:layout_constraintRight_toRightOf="@id/app"
+            app:layout_constraintTop_toTopOf="@id/vidget_bar"
+            app:layout_constraintVertical_bias="0.85" />
+
+        <ImageButton
+            android:id="@+id/play"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_videoplayer"
+            app:layout_constraintBottom_toBottomOf="@id/vidget_bar"
+            app:layout_constraintHorizontal_bias="0.62"
+            app:layout_constraintLeft_toLeftOf="@id/vidget_bar"
+            app:layout_constraintRight_toRightOf="@id/vidget_bar"
+            app:layout_constraintTop_toTopOf="@id/vidget_bar"
+            app:layout_constraintVertical_bias="0.22" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Movies"
+            android:textColor="#9BA0A4"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/vidget_bar"
+            app:layout_constraintLeft_toLeftOf="@id/play"
+            app:layout_constraintRight_toRightOf="@id/play"
+            app:layout_constraintTop_toTopOf="@id/vidget_bar"
+            app:layout_constraintVertical_bias="0.85" />
+
+        <ImageButton
+            android:id="@+id/book"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_book"
+            app:layout_constraintBottom_toBottomOf="@id/vidget_bar"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintLeft_toLeftOf="@id/vidget_bar"
+            app:layout_constraintRight_toRightOf="@id/vidget_bar"
+            app:layout_constraintTop_toTopOf="@id/vidget_bar"
+            app:layout_constraintVertical_bias="0.16" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Books"
+            android:textColor="#9BA0A4"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/vidget_bar"
+            app:layout_constraintLeft_toLeftOf="@id/book"
+            app:layout_constraintRight_toRightOf="@id/book"
+            app:layout_constraintTop_toTopOf="@id/vidget_bar"
+            app:layout_constraintVertical_bias="0.85" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
